@@ -1,0 +1,19 @@
+{
+  "builds": [
+    {
+      "src": "client/index.html",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist/public"
+      }
+    },
+    {
+      "src": "server/index.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/server/index.ts" },
+    { "src": "/(.*)", "dest": "/dist/public/index.html" }
+  ]
+}

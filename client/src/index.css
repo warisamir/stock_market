@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+  
+  input, textarea {
+    @apply text-foreground;
+  }
+  
+  .bg-dark-700 input, .bg-dark-800 input, input.bg-dark-800 {
+    @apply text-white;
+  }
+  
+  /* Override for all dark inputs */
+  input.bg-dark-800, input.text-white {
+    color: white !important;
+  }
+}
